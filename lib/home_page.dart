@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/spacemule.png"),
+          image: AssetImage("assets/spacemulecode.png"),
           fit: BoxFit.fill,
         ),
       ),

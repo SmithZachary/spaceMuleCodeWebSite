@@ -22,7 +22,10 @@ class ColorThemeSelector extends StatelessWidget {
               value: ThemeMode.light,
               onChanged: themeChanger.setTheme,
             ),
-            const Text('Light Mode'),
+            const Text(
+              'Light Mode',
+              style: TextStyle(color: Colors.white),
+            ),
           ],
         ),
         Row(
@@ -33,7 +36,10 @@ class ColorThemeSelector extends StatelessWidget {
               value: ThemeMode.dark,
               onChanged: themeChanger.setTheme,
             ),
-            const Text('Dark Mode'),
+            const Text(
+              'Dark Mode',
+              style: TextStyle(color: Colors.white),
+            ),
           ],
         ),
       ],

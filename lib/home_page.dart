@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:spacemulewebsite/theme.dart';
-
 import 'components/theme_selector.dart';
 import 'main.dart';
 
@@ -35,7 +33,7 @@ class HomePage extends StatelessWidget {
                 'assets/moon.png',
                 width: 200,
               ),
-              duration: Duration(milliseconds: 200),
+              duration: const Duration(milliseconds: 200),
             ),
           ),
           title: const Text('spaceMuleCode'),

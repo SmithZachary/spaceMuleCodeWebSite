@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:spacemulewebsite/components/_components.dart';
 import 'package:spacemulewebsite/themes/theme_provider.dart';
+import 'package:spacemulewebsite/utils/card_lists.dart';
 
 import 'main.dart';
 
@@ -64,7 +65,7 @@ class HomePage extends StatelessWidget {
               child: ListView.builder(
                   physics: const AlwaysScrollableScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  itemCount: cardTitles.length,
+                  itemCount: titles.length,
                   itemBuilder: (BuildContext context, int position) {
                     return cardItem(position);
                   }),
@@ -93,7 +94,7 @@ Widget cardItem(int i) {
               border: Border.all(
                 color: Colors.white,
               ),
-              borderRadius: BorderRadius.all(Radius.circular(20)),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
               boxShadow: const <BoxShadow>[
                 BoxShadow(
                     color: Colors.white,
@@ -101,16 +102,19 @@ Widget cardItem(int i) {
                     offset: Offset(0.0, 0.75))
               ],
               image: DecorationImage(
-                image: AssetImage(cardTitles[i]),
+                image: AssetImage('${titles[i]['tileTitle']}'),
                 fit: BoxFit.fill,
               ),
             ),
             height: 300,
             width: 300,
           ),
-          const Text(
-            'Button Title',
-            style: TextStyle(color: Colors.white, fontSize: 30),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              'Button Title',
+              style: TextStyle(color: Colors.white, fontSize: 30),
+            ),
           ),
         ],
       ),

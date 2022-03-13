@@ -57,40 +57,20 @@ class HomePage extends StatelessWidget {
             PointerDeviceKind.touch,
             PointerDeviceKind.mouse,
           }),
-          child: Container(
-            height: 300,
-            child: ListView.builder(
-                physics: const AlwaysScrollableScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                itemCount: cardTitles.length,
-                itemBuilder: (BuildContext context, int position) {
-                  return cardItem(position);
-                }),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 300,
+              child: ListView.builder(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: cardTitles.length,
+                  itemBuilder: (BuildContext context, int position) {
+                    return cardItem(position);
+                  }),
+            ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class FooterSquare extends StatelessWidget {
-  FooterSquare({Key? key, required this.boxImagePath, required this.i})
-      : super(key: key);
-  String boxImagePath;
-  int i;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(boxImagePath),
-            fit: BoxFit.fill,
-          ),
-        ),
-        height: 300,
-        width: 300,
       ),
     );
   }
@@ -106,15 +86,33 @@ Widget cardItem(int i) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: GestureDetector(
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(cardTitles[i]),
-            fit: BoxFit.fill,
+      child: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.white,
+              ),
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              boxShadow: const <BoxShadow>[
+                BoxShadow(
+                    color: Colors.white,
+                    blurRadius: 5.0,
+                    offset: Offset(0.0, 0.75))
+              ],
+              image: DecorationImage(
+                image: AssetImage(cardTitles[i]),
+                fit: BoxFit.fill,
+              ),
+            ),
+            height: 300,
+            width: 300,
           ),
-        ),
-        height: 300,
-        width: 300,
+          const Text(
+            'Button Title',
+            style: TextStyle(color: Colors.white, fontSize: 30),
+          ),
+        ],
       ),
     ),
   );

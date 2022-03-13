@@ -1,26 +1,26 @@
 const List<Map<String, String>> titles = [
   {
-    'tileTitle': '',
-    'tileImage': '',
+    'tileTitle': 'First',
+    'tileImage': 'assets/spacemulecode.png',
   },
   {
-    'tileTitle': '',
-    'tileImage': '',
+    'tileTitle': 'Second',
+    'tileImage': 'assets/spacemulecode.png',
   },
   {
-    'tileTitle': '',
-    'tileImage': '',
+    'tileTitle': 'Third',
+    'tileImage': 'assets/spacemulecode.png',
   },
   {
-    'tileTitle': '',
-    'tileImage': '',
+    'tileTitle': 'Fourth',
+    'tileImage': 'assets/spacemulecode.png',
   },
   {
-    'tileTitle': '',
-    'tileImage': '',
+    'tileTitle': 'Fifth',
+    'tileImage': 'assets/spacemulecode.png',
   },
   {
-    'tileTitle': '',
-    'tileImage': '',
+    'tileTitle': 'Sixth',
+    'tileImage': 'assets/spacemulecode.png',
   }
 ];

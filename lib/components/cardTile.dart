@@ -13,7 +13,9 @@ Widget cardItem(int i) {
               border: Border.all(
                 color: Colors.white,
               ),
-              borderRadius: const BorderRadius.all(Radius.circular(20)),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(20),
+              ),
               boxShadow: const <BoxShadow>[
                 BoxShadow(
                     color: Colors.white,
@@ -21,17 +23,17 @@ Widget cardItem(int i) {
                     offset: Offset(0.0, 0.75))
               ],
               image: DecorationImage(
-                image: AssetImage('${titles[i]['tileTitle']}'),
+                image: AssetImage('${titles[i]['tileImage']}'),
                 fit: BoxFit.fill,
               ),
             ),
             height: 300,
             width: 300,
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.all(8.0),
             child: Text(
-              'Button Title',
+              '${titles[i]['tileTitle']}',
               style: TextStyle(color: Colors.white, fontSize: 30),
             ),
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../main.dart';
+import '../themes/theme_provider.dart';
 
 class ColorThemeSelector extends StatelessWidget {
   const ColorThemeSelector({

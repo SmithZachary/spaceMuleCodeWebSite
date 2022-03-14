@@ -54,24 +54,46 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: ScrollConfiguration(
-          behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
-            PointerDeviceKind.touch,
-            PointerDeviceKind.mouse,
-          }),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 300,
-              child: ListView.builder(
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  itemCount: titles.length,
-                  itemBuilder: (BuildContext context, int position) {
-                    return cardItem(position);
-                  }),
-            ),
-          ),
+        bottomNavigationBar: bottomBar(),
+      ),
+    );
+  }
+}
+
+class bottomBar extends StatefulWidget {
+  bottomBar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<bottomBar> createState() => _bottomBarState();
+}
+
+class _bottomBarState extends State<bottomBar> {
+  @override
+  Widget build(BuildContext context) {
+    var itemHeight = 300.0;
+    var itemWidth = 300.0;
+    return ScrollConfiguration(
+      behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      }),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          height: itemHeight,
+          width: itemWidth,
+          child: ListView.builder(
+              physics: const AlwaysScrollableScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemCount: titles.length,
+              itemBuilder: (BuildContext context, int position) {
+                return CardTile(
+                  i: position,
+                );
+                //cardItem(position);
+              }),
         ),
       ),
     );

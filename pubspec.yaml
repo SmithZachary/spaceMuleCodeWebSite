@@ -30,6 +30,8 @@ dependencies:
   flutter:
     sdk: flutter
   provider:
+  font_awesome_flutter: ^10.1.0
+  rive:
 
 
   # The following adds the Cupertino Icons font to your application.

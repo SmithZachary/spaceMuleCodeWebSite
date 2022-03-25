@@ -29,7 +29,9 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.all(8.0),
             child: AnimatedLightDark(),
           ),
-          title: const Text('spaceMuleCode'),
+          title: const Text(
+            'spaceMuleCode: Coming Soon Beginner Flutter/Dart Course',
+          ),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
